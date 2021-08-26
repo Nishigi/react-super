@@ -1,0 +1,23 @@
+.article{ 
+    .title{
+        background-color: #FFF;
+        padding: 30px;
+        margin-bottom: 20px;
+        .ant-col-2{        
+            &>span{
+              display: block;
+              padding: 5px;
+              text-align: right;
+            }
+          }
+    }
+    
+    .table{
+        padding: 25px;
+        background-color: #FFF;
+    }
+    .article-modify{ 
+      padding: 25px;
+      background-color: #FFF;
+  }
+}
