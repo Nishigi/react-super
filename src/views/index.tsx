@@ -21,6 +21,12 @@ const EmployMana = loadable(() => import('@/views/shop/EmployMana'))
 const RoleMana = loadable(() => import('@/views/shop/RoleMana'))
 const ShopMana = loadable(() => import('@/views/shop/ShopMana'))
 
+//权益卡
+const Rights = loadable(() => import('@/views/rights/Rights'))
+const AddCard = loadable(() => import('@/views/rights/AddCard'))
+const ReCard = loadable(() => import('@/views/rights/ReCard'))
+const GetCard = loadable(() => import('@/views/rights/GetCard'))
+
 export const constRoutes = [
   {
     id: 1,
@@ -116,6 +122,41 @@ export default [
         path: '/manage/employ',
         component: EmployMana,
         permission: ['admin', 'editor']
+      }
+    ]
+  },
+  {
+    id: 14,
+    text: '权益管理',
+    icon: <UserOutlined />,
+    permission: ['admin', 'editor'],
+    children: [
+      {
+        id: 1401,
+        text: '权益卡',
+        path: '/Rights',
+        component: Rights,
+        permission: ['admin', 'editor'],
+        children: [
+          {
+            id: 14001,
+            path: '/Rights/AddCard',
+            component: AddCard,
+            permission: ['admin', 'editor'],
+          },
+          {
+            id: 14002,
+            path: '/Rights/GetCard',
+            component: GetCard,
+            permission: ['admin', 'editor'],
+          },
+          {
+            id: 14003,
+            path: '/Rights/ReCard',
+            component: ReCard,
+            permission: ['admin', 'editor'],
+          }
+        ]
       }
     ]
   }

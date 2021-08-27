@@ -60,6 +60,7 @@ export default () => {
             <Form
                 labelAlign='right'
                 labelCol={{ span: 5 }}
+                onFinish={onFinish}
             >
                 <Form.Item>
                     <Breadcrumb>
