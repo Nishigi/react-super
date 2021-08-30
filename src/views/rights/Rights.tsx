@@ -1,5 +1,5 @@
 import { Tabs, Button, Breadcrumb, Row, Col, Input } from 'antd'
-import { useHistory, withRouter } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import TableCard from "./components/TableCard";
 import './rights.scss'
@@ -8,6 +8,7 @@ import './style.scss'
 const { TabPane } = Tabs;
 const { Search } = Input;
 export default () => {
+    // console.log('layout---', props.location.pathname);
     const history = useHistory();
 
     const onSearch = value => console.log(value);
