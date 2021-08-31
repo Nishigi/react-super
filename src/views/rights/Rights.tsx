@@ -1,4 +1,4 @@
-import { Tabs, Button, Breadcrumb, Row, Col, Input } from 'antd'
+import { Tabs, Button, Breadcrumb, Row, Input } from 'antd'
 import { useHistory } from 'react-router-dom'
 
 import TableCard from "./components/TableCard";
@@ -38,24 +38,21 @@ export default () => {
 
             <Row
                 style={{ marginBottom: '20px' }}
+                justify='space-between'
                 wrap={false}
             >
-                <Col span={19}>
-                    <Button
-                        type='primary'
-                        onClick={() => history.push('/Rights/AddCard')}
-                    >
-                        新建权益卡
+                <Button
+                    type='primary'
+                    onClick={() => history.push('/Rights/AddCard')}
+                >
+                    新建权益卡
                     </Button>
-                </Col>
 
-                <Col >
-                    <Search
-                        placeholder="请输入"
-                        onSearch={onSearch}
-                        style={{ width: 200 }}
-                    />
-                </Col>
+                <Search
+                    placeholder="请输入"
+                    onSearch={onSearch}
+                    style={{ width: 200 }}
+                />
             </Row>
             <Tabs type="card">
                 <TabPane tab="使用中" key="1">

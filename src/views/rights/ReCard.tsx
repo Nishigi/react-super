@@ -1,5 +1,5 @@
 
-import { Tabs, Breadcrumb, Input, Row, Col } from 'antd'
+import { Tabs, Breadcrumb, Input, Row } from 'antd'
 import TableCard from "./components/TableCard";
 import { useHistory } from 'react-router-dom'
 import './style.scss'
@@ -30,14 +30,12 @@ export default () => {
                     <Row
                         style={{ marginBottom: '20px' }}
                         wrap={false}
+                        justify='end'
                     >
-                        <Col offset={19}>
-
-                            <Search
-                                placeholder="请输入"
-                                style={{ width: 200 }}
-                            />
-                        </Col>
+                        <Search
+                            placeholder="请输入"
+                            style={{ width: 200 }}
+                        />
                     </Row>
                     <TableCard></TableCard>
                 </TabPane>

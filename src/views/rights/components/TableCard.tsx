@@ -35,7 +35,20 @@ export default () => {
 
     return (
         <div>
-            <Table columns={columns} dataSource={data} scroll={{ x: 1250 }} />
+            <Table
+                rowKey='key'
+                columns={columns}
+                dataSource={data}
+                scroll={{ x: 1250 }}
+
+                pagination={{
+                    total: 2,
+                    showQuickJumper: true,
+                    showLessItems: true,
+                    showTotal: () => <div>共0条 , 每页共20条</div>,
+                    pageSize: 1
+                }}
+            />
         </div>
     )
 }
