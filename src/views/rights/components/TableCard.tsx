@@ -45,7 +45,7 @@ export default () => {
                     total: 2,
                     showQuickJumper: true,
                     showLessItems: true,
-                    showTotal: () => <div>共0条 , 每页共20条</div>,
+                    showTotal: () => <div>共1条 , 每页共20条</div>,
                     pageSize: 1
                 }}
             />

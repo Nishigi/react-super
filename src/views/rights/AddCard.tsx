@@ -9,12 +9,16 @@ import {
     DatePicker,
     Tooltip,
     InputNumber,
-    Checkbox
+    Checkbox,
+    Row,
+    Switch,
+    Select
 } from 'antd'
 
 import { QuestionCircleOutlined } from '@ant-design/icons';
-
 import './style.scss'
+
+const { Option } = Select;
 export default () => {
     const [cardtime, setCardTime] = useState(1)
     const [back, setBack] = useState(1)
@@ -150,37 +154,73 @@ export default () => {
 
                 <legend className="zent-form__legend">权益礼包</legend>
                 <Form.Item label="权益">
-                    <Checkbox>包邮</Checkbox>
-                    <Checkbox>消费折扣</Checkbox>
-                    <Checkbox>会员价</Checkbox>
-                    <Checkbox>积分回馈倍率</Checkbox>
-                    <Checkbox>获得好友体验卡</Checkbox>
+                    <Row>
+                        <Checkbox>包邮</Checkbox>
+                    </Row>
+                    <Row>
+                        <Checkbox>消费折扣</Checkbox>
+                    </Row>
+                    <Row>
+                        <Checkbox>会员价</Checkbox>
+                    </Row>
+                    <Row>
+                        <Checkbox>积分回馈倍率</Checkbox>
+                    </Row>
+                    <Row>
+                        <Checkbox>获得好友体验卡</Checkbox>
+                    </Row>
                 </Form.Item >
                 <Form.Item label="领卡礼包">
-                    <Checkbox>送积分</Checkbox>
-                    <Checkbox>送优惠</Checkbox>
-                    <Checkbox>送赠品</Checkbox>
+                    <Row>
+                        <Checkbox>送积分</Checkbox>
+                    </Row>
+                    <Row>
+                        <Checkbox>送优惠</Checkbox>
+                    </Row>
+                    <Row>
+                        <Checkbox>送赠品
+                            <Tooltip
+                                placement="bottomLeft"
+                                title="请随时关注赠品库存并进行补充，避免出现客户领取时赠品库存不足"
+                            >
+                                <QuestionCircleOutlined />
+                            </Tooltip>
+                        </Checkbox>
+                    </Row>
+                    <Row>
+                        <div> 权益不够用？<a href="javascript:;">去配置权益</a></div>
+                    </Row>
                 </Form.Item >
 
                 <legend className="zent-form__legend">高级设置</legend>
                 <Form.Item label="激活设置">
-                    <Checkbox>预览</Checkbox>
+                    <Switch
+                        size="small"
+                        defaultChecked
+                    />
+                    <a href="javascript:;">
+                        &nbsp;  预览
+                    </a>
                 </Form.Item >
                 <Form.Item label="同步微信卡包">
-                    <Checkbox>
-                        未绑定认证的服务号或订阅号，去绑定<br />
-                    未认证的订阅号或服务号建议申请代制卡券</Checkbox>
+                    未绑定认证的服务号或订阅号，<a href="javascript:;">去绑定</a>
+                    <br />
+                    未认证的订阅号或服务号建议<a href="javascript:;">申请代制卡券</a>
                 </Form.Item >
                 <Form.Item label="分享设置">
                     <Checkbox>允许分享</Checkbox>
                 </Form.Item >
                 <Form.Item label="过期设置">
-                    <Checkbox>卡过期后,消费者变更至</Checkbox>
+                    卡过期后,消费者变更至&nbsp;<Select
+                        showArrow style={{ width: 200 }}
+                        defaultValue='1'
+                    >
+                        <Option value="1">无法享受该卡权益</Option>
+                    </Select>
                 </Form.Item >
                 <Form.Item label="协议确认">
-                    <Checkbox>《权益卡使用协议》是你提供给消费者的承诺，勾选后即表示同意协议中的所有条款。</Checkbox>
+                    <Checkbox><a href="javascript:;">《权益卡使用协议》</a>是你提供给消费者的承诺，勾选后即表示同意协议中的所有条款。</Checkbox>
                 </Form.Item >
-
 
                 <Form.Item>
                     <Button type="primary" htmlType="submit">保存</Button>
