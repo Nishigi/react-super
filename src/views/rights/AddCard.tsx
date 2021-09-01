@@ -12,7 +12,7 @@ import {
     Checkbox,
     Row,
     Switch,
-    Select
+    Select,
 } from 'antd'
 
 import { QuestionCircleOutlined } from '@ant-design/icons';
@@ -188,7 +188,7 @@ export default () => {
                         </Checkbox>
                     </Row>
                     <Row>
-                        <div> 权益不够用？<a href="javascript:;">去配置权益</a></div>
+                        <div> 权益不够用？<a>去配置权益</a></div>
                     </Row>
                 </Form.Item >
 
@@ -198,14 +198,18 @@ export default () => {
                         size="small"
                         defaultChecked
                     />
-                    <a href="javascript:;">
+                    <a>
                         &nbsp;  预览
                     </a>
+                    <div style={{ background: '#f7f8fa', width: 450, height: 85, padding: '5px 30px', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+                        <div>验证阶段:<Checkbox disabled checked>验证手机号：买家领取卡片需填写手机号</Checkbox></div>
+                        <div>完善学习: <Checkbox>买家领取卡片需填写个人基本信息</Checkbox></div>
+                    </div>
                 </Form.Item >
                 <Form.Item label="同步微信卡包">
-                    未绑定认证的服务号或订阅号，<a href="javascript:;">去绑定</a>
+                    未绑定认证的服务号或订阅号，<a>去绑定</a>
                     <br />
-                    未认证的订阅号或服务号建议<a href="javascript:;">申请代制卡券</a>
+                    未认证的订阅号或服务号建议<a>申请代制卡券</a>
                 </Form.Item >
                 <Form.Item label="分享设置">
                     <Checkbox>允许分享</Checkbox>
@@ -219,7 +223,7 @@ export default () => {
                     </Select>
                 </Form.Item >
                 <Form.Item label="协议确认">
-                    <Checkbox><a href="javascript:;">《权益卡使用协议》</a>是你提供给消费者的承诺，勾选后即表示同意协议中的所有条款。</Checkbox>
+                    <Checkbox><a>《权益卡使用协议》</a>是你提供给消费者的承诺，勾选后即表示同意协议中的所有条款。</Checkbox>
                 </Form.Item >
 
                 <Form.Item>
